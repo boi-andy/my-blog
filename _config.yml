@@ -20,7 +20,8 @@
 
 title: "How to Use Data Science to Create a Baseball Line-up"
 email: andynelson29@gmail.com 
-description: "Change the description so that it describes your blog" 
+description: "This article explores how data science is revolutionizing the creation of MLB baseball lineups, 
+optimizing player selection, and enhancing team performance through data-driven insights and real-time analytics." 
 baseurl: "/my-blog" # the name of the repository 
 url: "https://boi-andy.github.io/my-blog" #  change this to "https://<your-github-username>.github.io"
 image: https://source.unsplash.com/random

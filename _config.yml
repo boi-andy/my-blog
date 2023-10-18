@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: How to Use Data Science to Create a Baseball Line-up
+title: "How to Use Data Science to Create a Baseball Line-up"
 email: andynelson29@gmail.com 
 description: "Change the description so that it describes your blog" 
 baseurl: "/my-blog" # the name of the repository 
@@ -35,16 +35,16 @@ footer_description: 'The default image for the site header is a random image fro
 
 
 # Social media users names.  Leave fields blank that you don't want displayed
-twitter_username: 386student
-github_username:  386student
-linkedin_username: 386student
+twitter_username: 
+github_username:  boi-andy
+linkedin_username: 
 dribbble_username: 
 facebook_username:
 flickr_username:
-instagram_username: andynelson29
+instagram_username:
 pinterest_username:
 youtube_username: 
-googleplus_username: 386student
+googleplus_username: 
 
 plugins:
   - jekyll-feed

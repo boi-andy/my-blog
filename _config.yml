@@ -18,13 +18,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: "How to Use Data Science to Create a Baseball Line-up"
+title: "Andy's Blog"
 email: andynelson29@gmail.com 
-description: "This article explores how data science is revolutionizing the creation of MLB baseball lineups, 
-optimizing player selection, and enhancing team performance through data-driven insights and real-time analytics." 
+description: "I will be posting about my findings on ways to use Data Science in specific aspects of life." 
 baseurl: "/my-blog" # the name of the repository 
 url: "https://boi-andy.github.io/my-blog" #  change this to "https://<your-github-username>.github.io"
-image: https://source.unsplash.com/random
+image: "/assets/images/sea.jpeg"
 author: Andy Nelson
 copyright: AN # Your initials or what you want the copyright to be.  Leave empty for no copyright
 footer_description: 'The default image for the site header is a random image from 

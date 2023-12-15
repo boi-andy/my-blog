@@ -7,7 +7,7 @@ image: "/assets/images/Tatooine.webp"
 ---
 
 
-## Introduction
+## Hello There
 
 Before collecting data, I needed to come up with an idea of what I wanted to research. As summer turned to fall, and fall to winter, I began to end most of my nights off with a movie. I would log my movies on the app LetterBox and read reviews given by other users. I became interested in movie reviews and started to wonder how much each of these movies were making in box office sales. At this moment, I thought I had my project figured out.
 

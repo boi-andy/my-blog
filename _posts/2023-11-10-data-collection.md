@@ -7,7 +7,7 @@ image: "/assets/images/Tatooine.webp"
 ---
 
 
-## "Hello There"
+## Brainstorming Idea 
 
 Before collecting data, I needed to come up with an idea of what I wanted to research. As summer turned to fall, and fall to winter, I began to end most of my nights off with a movie. I would log my movies on the app LetterBox and read reviews given by other users. I became interested in movie reviews and started to wonder how much each of these movies were making in box office sales. At this moment, I thought I had my project figured out.
 
@@ -19,7 +19,7 @@ After what ended up being close to a full day's worth of seeking, I had finally 
 
 I decided that I wanted to know how many people live on each planet in the Star Wars universe. I posed the question: What causes a planet in the Star Wars' Galaxy to have a large population? 
 
-## Where the Research Began
+## Where the Data Collection Began
 
 As stated above, I retrieved my data from the [Star Wars' API](https://swapi.dev/). I used the endpoint /planets to retrieve the information about each planet. I then put this information into a dataframe named 'planets_df'. This was done by following this code:
 
@@ -58,6 +58,11 @@ planets_df = planets_df.loc[:, :'population']
 # Convert diameter to numeric
 planets_df['diameter'] = pd.to_numeric(planets_df['diameter'])
 ```
+This left me with a dataframe that looked like this:
+![Figure]({{site.url}}/{{site.baseurl}}/assets/images/planet_df.png)
+
+
+
 I then pulled data from the endpoint /people. This contained information of each main Star Wars character, including height, weight, and where they were born. I thought it would be fun to add a part in my Streamlit app where I could see all the characters from a selected planet. To test that I was connected to the people endpoint, I used this code:
 
 ```

@@ -68,7 +68,7 @@ planets_df['diameter'] = pd.to_numeric(planets_df['diameter'])
 ```
 This left me with a dataframe that looked like this:
 
-![Figure](/assets/images/planet_df.png)
+![Figure](../assets/images/planet_df.png)
 
 
 ## Add Additional Data

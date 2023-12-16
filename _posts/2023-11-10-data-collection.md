@@ -16,3 +16,30 @@ I started looking at data on Kaggle and Data.world. As I browsed these websites,
 I returned to the Google search bar and typed "free Star Wars apis". One of the first links took me to swampi.dev, which had loads of data on the entire universe. As a kid, I always wondered how big the planets in Star Wars really were, especially when the Death Star blew up Alderaan. I went through the endpoints of the API and came across /planets. This contained all the information I could have asked for, including diameter, density, gravity and population.
 
 After what ended up being close to a full day's worth of seeking, I had finally found my data source. Now that I have requested the data into VS code, I can finally say: "this is where the fun begins".
+
+I decided that I wanted to know how many people live on each planet in tthe Star Wars universe. I posed the question: What causes a planet in the Star Wars' Galaxy to have a large population? 
+
+## Where the Research Began
+
+As stated above, I retrieved my data from the [Star Wars' API](https://swapi.dev/). I used the endpoint /planets to retrieve the information about each planet. I then put this information into a dataframe named 'planets_df". This was done by following this code:
+
+```
+# Function to fetch all planet data from SWAPI
+def get_all_planet_data():
+    all_planets_data = []
+
+    for planet_id in range(1, 62):  # There are 60 planets in the SWAPI
+        api_url = f'https://swapi.dev/api/planets/{planet_id}/'
+        response = requests.get(api_url)
+
+        if response.status_code == 200:
+            planet_data = response.json()
+            all_planets_data.append(planet_data)
+
+    return all_planets_data
+
+# Fetch all planet data
+all_planets_data = get_all_planet_data()
+
+# Create a DataFrame from the list of planet data
+planets_df = pd.DataFrame(all_planets_data)

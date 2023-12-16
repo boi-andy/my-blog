@@ -27,6 +27,10 @@ I decided that I wanted to know how many people live on each planet in the Star 
 As stated above, I retrieved my data from the [Star Wars' API](https://swapi.dev/). I used the endpoint /planets to retrieve the information about each planet. I then put this information into a dataframe named 'planets_df'. This was done by following this code:
 
 ```
+# Python packages
+import requests
+import pandas as pd
+
 # Function to fetch all planet data from SWAPI
 def get_all_planet_data():
     all_planets_data = []

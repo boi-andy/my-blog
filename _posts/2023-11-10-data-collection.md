@@ -126,3 +126,7 @@ I did not have many ethical concerns while gathering this data as it is all publ
 After considering ethical issues, I have finalized a clean dataframe that contained all the planets in the Star Wars' galaxy and the information of main characters that originate from these planets. Between planets and characters, I have a surplus of observations and types of variables. I am officially ready to start my Exploratory Data Analysis and create visuals.
 
 For my full code and to view the data, visit this repo: [Final Project](https://github.com/boi-andy/final_project)
+
+For a description and analysis of each graph, visit my blog post [EDA of Planets and People](https://boi-andy.github.io/my-blog/2023/11/14/EDA.html)
+
+For an interactive app of the EDA of planets and people, visit [Streamlit](https://boi-andy-final-project-streamlitstreamlit-app-pfbhxb.streamlit.app/)

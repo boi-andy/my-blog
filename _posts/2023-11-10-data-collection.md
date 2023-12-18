@@ -72,7 +72,7 @@ This left me with a dataframe that looked like this:
 
 
 ## Add Additional Data
-I then pulled data from the endpoint /people. This contained information of each main Star Wars character, including height, weight, and where they were born. I thought it would be fun to add a part in my Streamlit app where I could see all the characters from a selected planet. To do this, I used the following code:
+I then pulled data from the endpoint /people. This contained information of each main Star Wars character, including height, weight, and where they were born. I thought it would be fun to add a part in my Streamlit app where I could see all the characters from a selected planet. To do this, I used the following code (which has descriptions of cleaning):
 
 ```
 import requests

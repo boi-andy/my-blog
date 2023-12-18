@@ -72,44 +72,55 @@ This left me with a dataframe that looked like this:
 
 
 ## Add Additional Data
-I then pulled data from the endpoint /people. This contained information of each main Star Wars character, including height, weight, and where they were born. I thought it would be fun to add a part in my Streamlit app where I could see all the characters from a selected planet. To test that I was connected to the people endpoint, I used this code:
+I then pulled data from the endpoint /people. This contained information of each main Star Wars character, including height, weight, and where they were born. I thought it would be fun to add a part in my Streamlit app where I could see all the characters from a selected planet. To do this, I used the following code:
 
 ```
-# Test for one person
+import requests
+import pandas as pd
 
-# Define the API URL for a specific person (e.g., person with ID 1)
-api_url = 'https://swapi.dev/api/people/1/'
+# Function to fetch data for a specific person
+def get_person_data(person_id):
+    api_url = f'https://swapi.dev/api/people/{person_id}/'
+    response = requests.get(api_url)
+    
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print(f"Failed to retrieve data for person {person_id}. Status code: {response.status_code}")
+        return None
 
-# Make the API request
-response = requests.get(api_url)
+# Get the total number of characters
+initial_response = requests.get('https://swapi.dev/api/people/')
+total_characters = initial_response.json()['count']
 
-# Check if the request was successful (status code 200)
-if response.status_code == 200:
-    # Parse the JSON response
-    person_data = response.json()
+# Create an empty DataFrame to store the data
+columns = ['Name', 'Birth Year', 'Gender', 'Height', 'Mass', 'Hair Color', 'Eye Color', 'Skin Color']
+characters_df = pd.DataFrame(columns=columns)
 
-    # Display information about the person
-    print("Name:", person_data['name'])
-    print("Birth Year:", person_data['birth_year'])
-    print("Gender:", person_data['gender'])
-    print("Height:", person_data['height'])
-    print("Mass:", person_data['mass'])
-    print("Hair Color:", person_data['hair_color'])
-    print("Eye Color:", person_data['eye_color'])
-    print("Skin Color:", person_data['skin_color'])
-else:
-    print(f"Failed to retrieve data. Status code: {response.status_code}")
+# Fetch and append data for each person
+for person_id in range(1, total_characters + 1):
+    person_data = get_person_data(person_id)
+    
+    if person_data:
+        # Append a new row to the DataFrame
+        characters_df = characters_df.append({
+            'Name': person_data['name'],
+            'Birth Year': person_data['birth_year'],
+            'Gender': person_data['gender'],
+            'Height': person_data['height'],
+            'Mass': person_data['mass'],
+            'Hair Color': person_data['hair_color'],
+            'Eye Color': person_data['eye_color'],
+            'Skin Color': person_data['skin_color'],
+        }, ignore_index=True)
 ```
-This generated this output:<br>
-Name: Luke Skywalker <br>
-Birth Year: 19BBY <br>
-Gender: male <br>
-Height: 172 <br>
-Mass: 77 <br>
-Hair Color: blond <br>
-Eye Color: blue <br>
-Skin Color: fair <br>
+This generated a dataframe that looked like this:<br>
+![Figure](https://boi-andy.github.io/my-blog/assets/images/people_df.png)
 
 
-## Finalize 
-After this was done, I had a clean dataframe that contained all the planets in the Star Wars' galaxy and the information of main characters that originate from these planets. I was officially ready to start my Exploratory Data Analysis and create visuals.
+## Ethical Considerations
+I did not have many ethical concerns while gathering this data as it is all public information. Considering the Star Wars galaxy is made up (at least thats what they want us to think- look at all the data we have!), I don't think people would mind that I am running analysis on its data. I think more than anything, people would be happy that I took intereest in this data and facsinated by my findings. The API allows requests and only asks that users don't abuse or sell the information, which I will not do. 
+
+
+## Conclusion 
+After considering ethical issues, I have finalized a clean dataframe that contained all the planets in the Star Wars' galaxy and the information of main characters that originate from these planets. Between planets and characters, I have a surplus of observations and types of variables. I am officially ready to start my Exploratory Data Analysis and create visuals.
